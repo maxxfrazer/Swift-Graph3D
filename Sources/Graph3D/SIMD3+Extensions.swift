@@ -46,9 +46,3 @@ internal extension SIMD3 where SIMD3.Scalar: FloatingPoint {
     return end * t + start * (1 - t)
   }
 }
-
-//func -(lhs: SIMD3<SIMD.Scalar.Scalar>, rhs: SIMD3<SIMD3.Scalar>) -> SIMD3<SIMD3.Scalar> {
-//  SIMD3<SIMD3.Scalar>(
-//}
-
-

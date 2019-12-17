@@ -102,9 +102,7 @@ public class Graph3D: GKGraph {
     }
     return (closestPoint, matchingNodes)
   }
-//  internal func doRouting(from start: RouteVertex, to end: RouteVertex) -> [RouteVertex] {
-//    [self.findPath(from: start, to: end) as! RouteVertex]
-//  }
+
   internal func doRouting(from worldPosition: SIMD3<Float>, to targetPosition: SIMD3<Float>) -> [SIMD3<Float>]
   {
     let (edgeStart, endsOfEdgeStart) = self.findPointOnEdge(from: worldPosition)
