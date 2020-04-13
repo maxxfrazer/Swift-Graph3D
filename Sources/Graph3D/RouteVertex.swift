@@ -7,22 +7,22 @@
 
 import GameplayKit.GKGraph
 
-internal class RouteVertex: GKGraphNode3D {
+public class RouteVertex: GKGraphNode3D {
   var travelCost: [GKGraphNode: Float] = [:]
 
   var simdPos: SIMD3<Float> {
     return SIMD3<Float>(self.position)
   }
 
-  convenience init(position: [Float]) {
+  internal convenience init(position: [Float]) {
     self.init(point: vector_float3(position))
   }
 
-  convenience init(_ position: SIMD3<Float>) {
+  internal convenience init(_ position: SIMD3<Float>) {
     self.init(point: vector_float3(position))
   }
 
-  override init(point: vector_float3) {
+  internal override init(point: vector_float3) {
     super.init(point: point)
   }
 

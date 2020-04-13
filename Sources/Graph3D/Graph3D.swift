@@ -63,20 +63,20 @@ public class Graph3D: GKGraph {
   }
 
 
-  internal func findNearestNode(to position: SIMD3<Float>, between nodes: [RouteVertex]) -> RouteVertex {
+  public func findNearestNode(to position: SIMD3<Float>, between nodes: [RouteVertex]) -> RouteVertex {
     let newNode = RouteVertex(position)
     return nodes.reduce(nodes[0]) { (best, next) -> RouteVertex in
       return newNode.cost(to: next) < newNode.cost(to: best) ? next : best
     }
   }
 
-  internal func findNearestNode(to position: SIMD3<Float>) -> RouteVertex {
+  public func findNearestNode(to position: SIMD3<Float>) -> RouteVertex {
     return self.findNearestNode(to: position, between: self.vertexNodes)
   }
 
 
   /// Find the closest point on the graph to a given point
-  internal func findPointOnEdge(from startPoint: SIMD3<Float>) -> (SIMD3<Float>, [RouteVertex]) {
+  public func findPointOnEdge(from startPoint: SIMD3<Float>) -> (SIMD3<Float>, [RouteVertex]) {
     var closestPoint = self.vertexNodes[edges[0][0]].getVectorPos()
     var closestDistance = startPoint.distance(to: closestPoint)
     var matchingNodes = [self.vertexNodes[edges[0][0]], self.vertexNodes[edges[0][1]]]
